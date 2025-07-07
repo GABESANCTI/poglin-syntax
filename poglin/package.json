@@ -1,0 +1,25 @@
+{
+  "name": "poglin",
+  "displayName": ".pog",
+  "description": "Syntax highlighting for Poglin language :)",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.101.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "poglin",
+      "aliases": ["Poglin", "poglin"],
+      "extensions": [".pog",".poglin",".poggers"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "poglin",
+      "scopeName": "source.poglin",
+      "path": "./syntaxes/poglin.tmLanguage.json"
+    }]
+  }
+}
