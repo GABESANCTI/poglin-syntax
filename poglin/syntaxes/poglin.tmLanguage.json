@@ -1,32 +1,76 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "Poglin",
-	"patterns": [
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		}
-	],
-	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.poglin",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.poglin",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.poglin",
-					"match": "\\\\."
-				}
-			]
-		}
-	},
-	"scopeName": "source.poglin"
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Poglin",
+  "scopeName": "source.poglin",
+  "patterns": [
+    { "include": "#keywords" },
+    { "include": "#types" },
+    { "include": "#operators" },
+    { "include": "#punctuation" },
+    { "include": "#literals" },
+    { "include": "#identifiers" },
+    { "include": "#comments" }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "match": "\\b(start|end|var|if|else|while|println|readLine|pog)\\b",
+          "name": "keyword.control.poglin"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "match": "\\b(Int|String)\\b",
+          "name": "storage.type.poglin"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "match": "==|!=|<=|>=|<|>|\\+|\\-|\\*|/|&&|\\|\\||!",
+          "name": "keyword.operator.poglin"
+        }
+      ]
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "match": "[{}();:=]",
+          "name": "punctuation.separator.poglin"
+        }
+      ]
+    },
+    "literals": {
+      "patterns": [
+        {
+          "match": "\\b[0-9]+\\b",
+          "name": "constant.numeric.poglin"
+        },
+        {
+          "match": "\"(\\\\.|[^\"])*\"",
+          "name": "string.quoted.double.poglin"
+        }
+      ]
+    },
+    "identifiers": {
+      "patterns": [
+        {
+          "match": "\\b[a-zA-Z_][a-zA-Z_0-9]*\\b",
+          "name": "variable.other.poglin"
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "match": "//.*$",
+          "name": "comment.line.double-slash.poglin"
+        }
+      ]
+    }
+  }
 }
