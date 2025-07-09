@@ -2,7 +2,7 @@
   "name": "poglin-syntax",
   "displayName": "Poglin Syntax Highlight",
   "description": "Syntax highlighting for the Poglin programming language (.pog files).",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "GABESANCTI",
   "author": {
     "name": "Gabe Sancti",

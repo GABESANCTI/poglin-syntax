@@ -3,13 +3,17 @@
   "name": "Poglin",
   "scopeName": "source.poglin",
   "patterns": [
+    { "include": "#comments" },
     { "include": "#keywords" },
     { "include": "#types" },
     { "include": "#operators" },
     { "include": "#punctuation" },
     { "include": "#literals" },
     { "include": "#identifiers" },
-    { "include": "#comments" }
+    {
+      "match": ".",
+      "name": "text.unclassified.poglin"
+    }
   ],
   "repository": {
     "keywords": {
@@ -67,8 +71,13 @@
     "comments": {
       "patterns": [
         {
-          "match": "//.*$",
-          "name": "comment.line.double-slash.poglin"
+          "name": "comment.line.double-slash.poglin",
+          "match": "//.*$"
+        },
+        {
+          "name": "comment.block.poglin",
+          "begin": "/\\*",
+          "end": "\\*/"
         }
       ]
     }
